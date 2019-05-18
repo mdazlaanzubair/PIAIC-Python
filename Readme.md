@@ -22,6 +22,16 @@ This directory contain chapters of the book just to reveal functionality of the 
 12. [Chapter 12 - Decision Making - Testing Sets of Conditions](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2012%20-%20Decision%20Making%20-%20Testing%20Sets%20of%20Conditions.py)
 13. [Chapter 13 - Decision Making - IF Statements Nested](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2013%20-%20Decision%20Making%20-%20IF%20Statements%20Nested.py)
 14. [Chapter 14 - Comments](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2014%20-%20Comments.py)
+15. [Chapter 15 - Lists](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2015%20-%20Lists.py)
+16. [Chapter 16 - Lists - Adding and Changing Elements](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2016%20-%20Lists%20-%20Adding%20and%20Changing%20Elements.py)
+17. [Chapter 17 - Lists - Taking Slices Out of List](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2017%20-%20Lists%20-%20Taking%20Slices%20Out%20of%20List.py)
+18. [Chapter 18 - Lists - Deleting and Removing Elements](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2018%20-%20Lists%20-%20Deleting%20and%20Removing%20Elements.py)
+19. [Chapter 19 - Lists - Popping Elements](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2019%20-%20Lists%20-%20Popping%20Elements.py)
+20. [Chapter 20 - Tuples](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2020%20-%20Tuples.py)
+21. [Chapter 21 - For Loop](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2021%20-%20For%20Loop.py)
+22. [Chapter 22 - For Loops Nested](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2022%20-%20For%20Loops%20Nested.py)
+23. [Chapter 23 - User Input and String to Number Conversion](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2023%20-%20User%20Input%20and%20String%20to%20Number%20Conversion.py)
+24. [Chapter 24- Changing Case](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2024-%20Changing%20Case.py)
 
 #### [Practice](https://github.com/azlaan4/PIAIC-Python/tree/master/Practice)
 Purpose of this directory is to use the knowledge of the chapter and test it on a meaningful programs,
