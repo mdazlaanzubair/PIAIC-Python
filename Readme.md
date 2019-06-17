@@ -32,6 +32,10 @@ This directory contain chapters of the book just to reveal functionality of the 
 22. [Chapter 22 - For Loops Nested](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2022%20-%20For%20Loops%20Nested.py)
 23. [Chapter 23 - User Input and String to Number Conversion](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2023%20-%20User%20Input%20and%20String%20to%20Number%20Conversion.py)
 24. [Chapter 24- Changing Case](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2024-%20Changing%20Case.py)
+25. [Chatpters 25,26,27 & 28 - Dictionaries](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chatpters%2025%2C26%2C27%20%26%2028%20-%20Dictionaries.py)
+26. [Chapters 29 & 30 - Dictionaries - Adding, Removing and Changing](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapters%2029%20%26%2030%20-%20Dictionaries%20-%20Adding%2C%20Removing%20and%20Changing%20Items.py)
+27. [Chapter 31,32 & 33 - Dictionaries - Looping Through Keys, Values & Key_Value_Pairs.py](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2031%2C32%20%26%2033%20-%20Dictionaries%20-%20Looping%20Through%20Keys%2C%20Values%20%26%20Key_Value_Pairs.py)
+28. [Chapter 34 - Dictionaries - Creating a List of Dictionaries.py](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2034%20-%20Dictionaries%20-%20Creating%20a%20List%20of%20Dictionaries.py)
 
 #### [Practice](https://github.com/azlaan4/PIAIC-Python/tree/master/Practice)
 Purpose of this directory is to use the knowledge of the chapter and test it on a meaningful programs,
