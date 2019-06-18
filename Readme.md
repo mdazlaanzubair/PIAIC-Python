@@ -34,8 +34,14 @@ This directory contain chapters of the book just to reveal functionality of the 
 24. [Chapter 24- Changing Case](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2024-%20Changing%20Case.py)
 25. [Chatpters 25,26,27 & 28 - Dictionaries](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chatpters%2025%2C26%2C27%20%26%2028%20-%20Dictionaries.py)
 26. [Chapters 29 & 30 - Dictionaries - Adding, Removing and Changing](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapters%2029%20%26%2030%20-%20Dictionaries%20-%20Adding%2C%20Removing%20and%20Changing%20Items.py)
-27. [Chapter 31,32 & 33 - Dictionaries - Looping Through Keys, Values & Key_Value_Pairs.py](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2031%2C32%20%26%2033%20-%20Dictionaries%20-%20Looping%20Through%20Keys%2C%20Values%20%26%20Key_Value_Pairs.py)
-28. [Chapter 34 - Dictionaries - Creating a List of Dictionaries.py](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2034%20-%20Dictionaries%20-%20Creating%20a%20List%20of%20Dictionaries.py)
+27. [Chapter 31,32 & 33 - Dictionaries - Looping Through Keys, Values & Key_Value_Pairs](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2031%2C32%20%26%2033%20-%20Dictionaries%20-%20Looping%20Through%20Keys%2C%20Values%20%26%20Key_Value_Pairs.py)
+28. [Chapter 34 - Dictionaries - Creating a List of Dictionaries](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2034%20-%20Dictionaries%20-%20Creating%20a%20List%20of%20Dictionaries.py)
+29. [Chapter 35 - Dictionaries - Extracting from List of Dictionaries](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2035%20-%20Dictionaries%20-%20Extracting%20from%20List%20of%20Dictionaries.py)
+30. [Chapter 36 - Dictionaries - Appending a Dictionary to the List](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2036%20-%20Dictionaries%20-%20Appending%20a%20Dictionary%20to%20the%20List.py)
+31. [Chapter 37 - Dictionaries - List within a Dictionary](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2037%20-%20Dictionaries%20-%20List%20within%20a%20Dictionary.py)
+32. [Chapter 38 - Dictionaries - Extracting Information from the List within Dictionary](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2038%20-%20Dictionaries%20-%20Extracting%20Information%20from%20the%20List%20within%20Dictionary.py)
+33. [Chapter 39 - Dictionaries - Dictionary within Dictionary](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2039%20-%20Dictionaries%20-%20Dictionary%20within%20Dictionary.py)
+34. [Chapter 40 - Dictionaries - Extracting Information from the Dictionaries within Dictionary](https://github.com/azlaan4/PIAIC-Python/blob/master/Chapters/Chapter%2040%20-%20Dictionaries%20-%20Extracting%20Information%20from%20the%20Dictionaries%20within%20Dictionary.py)
 
 #### [Practice](https://github.com/azlaan4/PIAIC-Python/tree/master/Practice)
 Purpose of this directory is to use the knowledge of the chapter and test it on a meaningful programs,
