@@ -45,8 +45,9 @@ This directory contain chapters of the book just to reveal functionality of the 
 
 #### [Practice](https://github.com/azlaan4/PIAIC-Python/tree/master/Practice)
 Purpose of this directory is to use the knowledge of the chapter and test it on a meaningful programs,
-1. [Print](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Print.py) 
-2. [Variables for Strings](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Variables%20for%20Strings.py)
-3. [Mathematical Operations](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Math%20Operators.py)
-4. [Lists and Arrays](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Arrays%20or%20Lists.py)
-5. [Decision Making](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Decision%20Making.py)
+01. [Print](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Print.py) 
+02. [Variables for Strings](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Variables%20for%20Strings.py)
+03. [Mathematical Operations](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Math%20Operators.py)
+04. [Lists and Arrays](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Arrays%20or%20Lists.py)
+05. [Decision Making](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Decision%20Making.py)
+06. [Find Consecutive Numbers](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Find%20Consecutive%20Numbers.py)
