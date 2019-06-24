@@ -27,7 +27,7 @@ def sr_system():
     choice = input("\nEnter your command to proceed:")
     choice = choice.lower()
 
-    # some sort of deciesion making on user's input
+    # some sort of decision making on user's input
     if choice == 'a':
         # calling add new student function
         add_student()
@@ -38,11 +38,11 @@ def sr_system():
 
     elif choice == 'c':
         # calling edit student's details function
-        def edit_student()
+        edit_student()
 
     elif choice == 'd':
         # calling delete student function
-        print("calling Delete Function")
+        delete_student()
 
     else:
         # calling same function while showing a custom error
@@ -78,7 +78,7 @@ def add_student():
         desire = input("\nDo you want to add more student (y/n)?: ")
         desire = desire.lower()
 
-        # taking deceision on the bases of users above input
+        # taking decision on the bases of users above input
         if desire == 'y':
             i += 1
         else:
@@ -103,19 +103,18 @@ def view_students():
     for student in students:
         pretty_table_object.add_row([student[0], student[1], student[2]])
 
-    studets_table = pretty_table_object.get_string()
-    print("\n"+studets_table)
+    students_table = pretty_table_object.get_string()
+    print("\n"+students_table)
 
     # asking user if he/she wants to go back to main function
     desire = input("\nDo you want jump back (y/n)?: ")
     desire = desire.lower()
 
-    # taking deceision on the bases of users above input
+    # taking decision on the bases of users above input
     if desire == 'y':
         sr_system()
     else:
         view_students()
-
 
 
 # edit student details
@@ -124,46 +123,127 @@ def edit_student():
     # getting student details and converting to lower case
     student_id = input("\nEnter Student's ID: ")
 
-    # testing input type
-    if type(student_id) is int or type(student_id) is float:
+    #  handling exception of value error
+    try:
         student_id = int(student_id)
-    else:
+    except ValueError:
         print("Student ID must be an integer. Be careful next time.")
         edit_student()
 
-    # setting value for looping in the same function
-    i = 1
+    # fetching details based on mentioned id
+    # sql query and values to fetch data from the database
+    sql_query = "SELECT * FROM students where id = "+str(student_id)
+    my_database.execute(sql_query)
+    student = my_database.fetchall()
 
-    # generating loop on basis of above 'i'
-    while i > 0:
+    # using pretty table library to show data
+    pretty_table_object = PrettyTable()
 
-        # getting student details and converting to lower case
-        student_name = input("\nEnter Student's Name: ")
-        subject = input("Enter Student's Subject: ")
+    # table header
+    pretty_table_object.field_names = ["Student ID", "Student's Name", "Subject"]
+
+    # table body
+    pretty_table_object.add_row([student[0][0], student[0][1], student[0][2]])
+
+    # converting data to an string and print it on the screen
+    student_table = pretty_table_object.get_string()
+    print("\n"+student_table+"\n")
+
+    # now taking updated input of student details from user
+    # getting student details and converting to lower case
+    student_name = input("\nUpdate Student's Name: ")
+    subject = input("Update Student's Subject: ")
+    s_name = s_subject = ""
+    if not student_name.replace(' ','').isalpha() or  not subject.replace(' ','').isalpha():
+        print("You are only allowed to use alphabetical characters. Be careful next time.")
+        edit_student()
+    else:
         s_name = student_name.title()
-        s_subject = subject.title()
+        s_subject = subject.upper()
 
-        # sql query and values to insert data to the database
-        sql_query = "INSERT INTO students (name, class) values (%s, %s)"
-        values_to_db = (s_name, s_subject)
+    # sql query and values to insert data to the database
+    sql_query = "UPDATE students SET name=%s, class=%s WHERE id=%s"
+    values = (s_name, s_subject, student_id)
 
-        # executing query to send data to the DB
-        my_database.execute(sql_query, values_to_db)
+    # executing query to send data to the DB
+    my_database.execute(sql_query, values)
 
-        # to save changes this command is used (isse zada is k bare mai kuch nai pata :P)
+    # to save changes this command is used (isse zada is k bare mai kuch nai pata :P)
+    db_connection.commit()
+
+    # success message
+    print("\nBooyeah! You have successfully updated "+s_name+"'s details.")
+
+    # asking user if he/she wants to edit more students or not
+    desire = input("\nDo you want to edit more student (y/n)?: ")
+    desire = desire.lower()
+
+    # taking decision on the bases of users above input
+    if desire == 'y':
+        edit_student()
+    else:
+        sr_system()
+
+
+# function to delete an specific student
+def delete_student():
+
+    # getting student details and converting to lower case
+    student_id = input("\nEnter Student's ID: ")
+
+    #  handling exception of value error
+    try:
+        student_id = int(student_id)
+    except ValueError:
+        print("Student ID must be an integer. Be careful next time.")
+        edit_student()
+
+    # fetching details based on mentioned id
+    # sql query and values to fetch data from the database
+    sql_query = "SELECT * FROM students where id="+str(student_id)
+    my_database.execute(sql_query)
+    student = my_database.fetchall()
+
+    # using pretty table library to show data
+    pretty_table_object = PrettyTable()
+
+    # table header
+    pretty_table_object.field_names = ["Student ID", "Student's Name", "Subject"]
+
+    # table body
+    pretty_table_object.add_row([student[0][0], student[0][1], student[0][2]])
+
+    # converting data to an string and print it on the screen
+    student_table = pretty_table_object.get_string()
+    print("\n"+student_table+"\n")
+
+    # asking user if he/she wants to edit more students or not
+    permit_to_delete = input("\nAre your sure you want to delete " + student[0][1] + "'s details (y/n)?: ")
+    permit_to_delete = permit_to_delete.lower()
+
+    # taking decision on the bases of users above input
+    if permit_to_delete == 'y':
+
+        # SQL query to delete value from database and its execution
+        sql_query = "DELETE FROM students where id="+str(student_id)
+        my_database.execute(sql_query)
         db_connection.commit()
 
+        # success message
+        print("\nBooyeah! You have successfully deleted " + student[0][1] + "'s details.")
+
         # asking user if he/she wants to edit more students or not
-        desire = input("\nDo you want to add more student (y/n)?: ")
+        desire = input("\nDo you want to delete more student (y/n)?: ")
         desire = desire.lower()
 
-        # taking deceision on the bases of users above input
+        # taking decision on the bases of users above input
         if desire == 'y':
-            i += 1
+            delete_student()
         else:
-            i = -1
+            sr_system()
+    else:
+        sr_system()
 
-    # if loop ends we'll get back to the main function again
-    sr_system()
 
+# first call of main CRUD function
 sr_system()
