@@ -51,3 +51,7 @@ Purpose of this directory is to use the knowledge of the chapter and test it on 
 04. [Lists and Arrays](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Arrays%20or%20Lists.py)
 05. [Decision Making](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Decision%20Making.py)
 06. [Find Consecutive Numbers](https://github.com/azlaan4/PIAIC-Python/blob/master/Practice/Find%20Consecutive%20Numbers.py)
+
+#### [Tasks by Instructor - Sir Qasim](https://github.com/azlaan4/PIAIC-Python/tree/master/Tasks%20by%20Instructor%20-%20Sir%20Qasim)
+Purpose of this directory is to push all class challenging assignments given by course instructor.
+01. [Login System - Using MySQL and MongoDB](https://github.com/azlaan4/PIAIC-Python/blob/master/Tasks%20by%20Instructor%20-%20Sir%20Qasim/Login%20System%20-%20Using%20MySQL%20and%20MongoDB.py) 
