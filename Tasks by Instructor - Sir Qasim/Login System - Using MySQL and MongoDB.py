@@ -1,6 +1,8 @@
 from prettytable import PrettyTable
 import mysql.connector
-import bcrypt
+# removing bcrypt cause we didn't
+# use it yet but we'll use it later
+# import bcrypt
 import json
 import csv
 
@@ -344,8 +346,6 @@ def download():
     print("\n*** You have successfully downloaded the details of students. ***\n")
     # print(students_table)
 
-# first call of main CRUD function
-# sr_system()
 
 # call of authentication function
 authenticate_user()
