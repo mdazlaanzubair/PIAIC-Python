@@ -1,5 +1,8 @@
 from prettytable import PrettyTable
 import mysql.connector
+import bcrypt
+import json
+import csv
 
 db_connection = mysql.connector.connect(
     host="localhost",
@@ -9,45 +12,121 @@ db_connection = mysql.connector.connect(
 )
 my_database = db_connection.cursor()
 
+# dictionary to store fetched data
+user_detail = {
+    'name': '',
+    'email': '',
+    'password': ''
+}
+
+
+# authentication function to protect CRUD application
+def authenticate_user():
+
+    # a variable to limit the number of wrong tries to login the system
+    login_attempt = 0
+
+    while login_attempt < 3:
+
+        # getting email from user
+        username = input("Enter your email: ")
+
+        # searching email in the database
+        sql_query = "SELECT * FROM users where email=%s"
+        value = (username,) # include comma',' to make the value variable tuple
+        my_database.execute(sql_query,value)
+        student = my_database.fetchall()
+
+        if len(student) != 0:
+            user_detail['name'] = student[0][1]
+            user_detail['email'] = student[0][2]
+            user_detail['password'] = student[0][3]
+
+            # getting email from user
+            password = input("Enter your password: ")
+
+            # authenticate if credentials are right or wrong
+            if user_detail['password'] == password and user_detail['email'] == username:
+
+                # exiting loop
+                login_attempt = 5
+            else:
+                print("Wrong username or password")
+        else:
+            print("Credentials doesn't match one of our records.")
+
+        login_attempt += 1
+
+    if login_attempt == 3:
+        print("Your limit to attempt login exceeded. Try it Later")
+    else:
+        sr_system()
+
+
+# logout user function to end session
+def logout():
+    user_detail = {
+        'name': '',
+        'email': '',
+        'password': ''
+    }
+    print("\n\n*** Your are Successfully Logged Out ***\n\n")
+
 
 # CRUD function of student registration system
 def sr_system():
 
-    # sasti c styling nothing else
-    print("=================================")
-    print("== STUDENT REGISTRATION SYSTEM ==")
-    print("=================================")
-    print("\nDirections:\n")
-    print("1. Type 'a' to Add New Student")
-    print("2. Type 'b' to View List of Students")
-    print("3. Type 'c' and 'Student ID' to Edit Student Details")
-    print("4. Type 'd' and 'Student ID' to Delete Student")
+    # checking if user is logged in or not
+    if  user_detail['name'] != '' and user_detail['email'] != '' and user_detail['password'] != '':
 
-    # grabbing user's choice
-    choice = input("\nEnter your command to proceed:")
-    choice = choice.lower()
+        # sasti c styling nothing else
+        print("=================================")
+        print("== STUDENT REGISTRATION SYSTEM ==")
+        print("=================================")
+        print("\n Hello and Welcome to the Application", user_detail['name'], "!")
+        print("\nDirections:\n")
+        print("1. Type 'a' to Add New Student")
+        print("2. Type 'b' to View List of Students")
+        print("3. Type 'c' to Edit Student Details")
+        print("4. Type 'd' to Delete Student")
+        print("5. Type 'e' to Logout")
+        print("5. Type 'f' to Download Student's Details")
 
-    # some sort of decision making on user's input
-    if choice == 'a':
-        # calling add new student function
-        add_student()
+        # grabbing user's choice
+        choice = input("\nEnter your command to proceed:")
+        choice = choice.lower()
 
-    elif choice == 'b':
-        # calling view list of students function
-        view_students()
+        # some sort of decision making on user's input
+        if choice == 'a':
+            # calling add new student function
+            add_student()
 
-    elif choice == 'c':
-        # calling edit student's details function
-        edit_student()
+        elif choice == 'b':
+            # calling view list of students function
+            view_students()
 
-    elif choice == 'd':
-        # calling delete student function
-        delete_student()
+        elif choice == 'c':
+            # calling edit student's details function
+            edit_student()
 
+        elif choice == 'd':
+            # calling delete student function
+            delete_student()
+
+        elif choice == 'e':
+            # calling logout function
+            logout()
+
+        elif choice == 'f':
+            # calling download function
+            download()
+
+        else:
+            # calling same function while showing a custom error
+            print("Please use commands mentioned above only [a, b, c, d]")
+            sr_system()
     else:
-        # calling same function while showing a custom error
-        print("Please use commands mentioned above only [a, b, c, d]")
-        sr_system()
+        authenticate_user()
 
 
 # adding student to the database function
@@ -245,5 +324,28 @@ def delete_student():
         sr_system()
 
 
+# function to download the data from the database
+def download():
+
+    # sql query and values to fetch data from the database
+    sql_query = "SELECT * FROM students"
+    my_database.execute(sql_query)
+    students = my_database.fetchall()
+
+    # writing csv
+    with open("student-details.csv", "w") as studentDetails:
+        wr = csv.writer(studentDetails)
+        wr.writerow(students)
+
+    # writing json
+    with open("student-details.json", "w") as studentDetails:
+        json.dump(students, studentDetails)
+
+    print("\n*** You have successfully downloaded the details of students. ***\n")
+    # print(students_table)
+
 # first call of main CRUD function
-sr_system()
+# sr_system()
+
+# call of authentication function
+authenticate_user()
