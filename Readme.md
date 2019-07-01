@@ -54,4 +54,4 @@ Purpose of this directory is to use the knowledge of the chapter and test it on 
 
 #### [Tasks by Instructor - Sir Qasim](https://github.com/azlaan4/PIAIC-Python/tree/master/Tasks%20by%20Instructor%20-%20Sir%20Qasim)
 Purpose of this directory is to push all class challenging assignments given by course instructor.
-01. [Login System - Using MySQL and MongoDB](https://github.com/azlaan4/PIAIC-Python/blob/master/Tasks%20by%20Instructor%20-%20Sir%20Qasim/Login%20System%20-%20Using%20MySQL%20and%20MongoDB.py) 
+01. [Task 01 - Python DB Connection & Authentication](https://github.com/azlaan4/PIAIC-Python/tree/master/Tasks%20by%20Instructor%20-%20Sir%20Qasim/Task%2001%20-%20Python%20DB%20Connection%20%26%20Authentication) 
